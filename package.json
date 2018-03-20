@@ -1,0 +1,36 @@
+{
+	"name": "univeristy-tw",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"dev": "gulp dev",
+		"dev:appserver": "dev_appserver.py --enable_host_checking=false --enable_console --host=0.0.0.0 --port=8080 --admin_host=0.0.0.0 --datastore_path=tmp/datastore.db dev.yaml",
+		"init": "pip2 install -t py_lib -r requirements.txt -U",
+		"deploy": "gcloud app deploy --project project-name --version 1 --no-promote",
+		"gulp": "gulp",
+		"build": "gulp build"
+	},
+	"devDependencies": {
+		"autoprefixer": "^8.0.0",
+		"babel-core": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"del": "^3.0.0",
+		"gulp": "^3.9.1",
+		"gulp-babel": "^7.0.0",
+		"gulp-imagemin": "^4.0.0",
+		"gulp-postcss": "^7.0.1",
+		"gulp-rev": "^8.1.1",
+		"gulp-sass": "^3.1.0",
+		"gulp-uglify": "^3.0.0",
+		"run-sequence": "^2.2.1"
+	},
+	"browserslist": [
+		"Chrome >= 30",
+		"Firefox >= 28",
+		"Edge >= 12",
+		"ie >= 11",
+		"Safari >= 8",
+		"Opera >= 17"
+	]
+}

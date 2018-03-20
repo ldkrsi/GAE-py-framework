@@ -1,0 +1,39 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+default_expiration: "2d"
+
+handlers:
+- url: /assets
+  static_dir: assets
+  secure: always
+  application_readable: true
+- url: /.*
+  script: main.app
+  secure: always
+
+libraries:
+- name: flask
+  version: "0.12"
+- name: ujson
+  version: "1.35"
+
+builtins:
+- remote_api: on
+
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+- ^assets-src/
+- ^node_modules/
+- ^py_lib/
+- ^tmp/
+- ^appengine_config\.py
+- ^dev.yaml
+- ^gulpfile\.js
+- ^package\.json
+- ^requirements\.txt
+- ^yarn\.lock

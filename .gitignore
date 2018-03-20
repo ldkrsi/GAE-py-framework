@@ -1,0 +1,7 @@
+*.pyc
+py_lib/*
+tmp/*
+node_modules/
+assets/*
+!**/.gitkeep
+
